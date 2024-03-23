@@ -1,1 +1,1 @@
-module.exports = require('bindings')('EventLog');
+module.exports = require('node-gyp-build')(__dirname);
