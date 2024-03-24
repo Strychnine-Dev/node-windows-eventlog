@@ -1,5 +1,5 @@
 {
-  "name": "windows-eventlog",
+  "name": "@strychnine-labs/windows-eventlog",
   "version": "4.0.0",
   "description": "Native win32 module to log messages to the Windows EventLog",
   "keywords": [
@@ -23,7 +23,9 @@
   "main": "index.js",
   "scripts": {
     "install": "node-gyp-build",
-    "prebuild": "prebuildify --all"
+    "prebuild": "prebuildify --all",
+    "pack": "npm pack",
+    "publish": "npm publish --access public"
   },
   "cpu": [
     "ia32",
