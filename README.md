@@ -4,7 +4,7 @@ Native node.js module to log messages to the Windows Event Log.
 
 ## Installation
 
-    $ npm install windows-eventlog
+    $ npm install @strychnine-labs/windows-eventlog
 
 ## Prerequisites
 
@@ -13,31 +13,23 @@ You need to have a compatible Visual Studio compiler installed, e.g.:
 - [Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs)
 - [Visual C++ 2010 redistributable fox x86](http://www.microsoft.com/en-us/download/details.aspx?id=5555)
 
-
 ## Usage
 
 When using the library like this:
 
 ```js
-  var EventLog = require('windows-eventlog').EventLog;
-  var myeventlog = new EventLog("MyAppName");
-  myeventlog.logSync("warn", "a message");
-  myeventlog.logSync("a message"); // severity defaults to "info"
-  myeventlog.log("error", "a message", function(err) {
+  const { EventLog } = require('windows-eventlog');
+  const logger = new EventLog("MyAppName");
+  logger.logSync("warn", "a message");
+  logger.logSync("a message"); // severity defaults to "info"
+  logger.log("error", "a message", function(err) {
     if (err) throw err;
   });
 ```
 
-you will see something like this:
+### new EventLog([logName])
 
-![2012-04-09_1007.png](http://joseoncodecom.ipage.com/wp-content/uploads/images/2012-04-09_1007.png)
-
-### new EventLog(source[, logName])
-
-This creates an instance of the EventLog with the given source. You can optionally pass a logName, defaults to "Application".
-
-If the source doesn't exist in the event log database it will be created with the givne log name.
-
+This creates an instance of the EventLog. You can optionally pass a logName, defaults to "Application".
 
 ### eventLog.log([severity,] message, callback)
 

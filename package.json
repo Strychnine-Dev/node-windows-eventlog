@@ -1,6 +1,6 @@
 {
   "name": "@strychnine-labs/windows-eventlog",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Native win32 module to log messages to the Windows EventLog",
   "keywords": [
     "windows",
@@ -11,31 +11,35 @@
   ],
   "homepage": "http://jfromaniello.github.com/node-windows-eventlog",
   "author": {
-    "name": "Jose Fernando Romaniello",
-    "email": "jfromaniello@gmail.com",
-    "url": "http://joseoncode.com/",
-    "twitter": "@jfroma"
+    "name": "Mason Buchanan",
+    "email": "masonwb@gmail.com",
+    "url": "https://www.github.com/masonwb"
   },
+  "contributors": [
+    {
+      "name": "Jose Fernando Romaniello",
+      "email": "jfromaniello@gmail.com",
+      "url": "http://joseoncode.com/",
+      "twitter": "@jfroma"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/jfromaniello/node-windows-eventlog.git"
   },
   "main": "index.js",
+  "types": "types",
   "scripts": {
     "install": "node-gyp-build",
-    "prebuild": "prebuildify --all",
+    "prebuild": "prebuildify --napi -t 20.13.1",
     "pack": "npm pack",
     "publish": "npm publish --access public"
   },
-  "cpu": [
-    "ia32",
-    "x64"
-  ],
   "dependencies": {
     "nan": "^2.19.0",
-    "node-gyp-build": "^4.8.0"
+    "node-gyp-build": "^4.8.1"
   },
   "devDependencies": {
-    "prebuildify": "^6.0.0"
+    "prebuildify": "^6.0.1"
   }
 }
