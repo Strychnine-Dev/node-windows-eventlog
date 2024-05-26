@@ -21,8 +21,8 @@
           }
         }
       },
-      'sources': [
-        'src/EventLog.cpp'
+      'conditions': [
+        ['OS=="win"', {'sources': ['src/EventLog.cpp']}]
       ]
     }
   ]
